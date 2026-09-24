@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Godzilla is Contrast | Art & Design Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HERO SECTION WITH SPLIT CONTRAST -->
+  <section class="hero-section" id="hero">
+
+    <!-- HERO MENU WITH CENTERED TITLE -->
+    <header class="hero-header">
+      <nav class="hero-menu" aria-label="Main Navigation">
+        <ul class="nav-links nav-left">
+          <li><a href="#about" class="nav-item">What is Contrast?</a></li>
+          <li><a href="#types" class="nav-item">Types of Contrast</a></li>
+        </ul>
+
+        <!-- Center Title specified in prompt: "Godzilla is contrast" -->
+        <h1 class="hero-title" id="heroTitle">Godzilla is contrast</h1>
+
+        <ul class="nav-links nav-right">
+          <li><a href="#principles" class="nav-item">Key Principles</a></li>
+          <li><a href="#interactive" class="nav-item">Interactive Lab</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- SPLIT CONTAINER -->
+    <div class="split-container">
+      
+      <!-- LEFT SIDE: Default Black Background + Godzilla-leftinvert.png, Hover: White Background + Godzilla-left.png -->
+      <div class="split-side split-left" id="splitLeft" tabindex="0" role="region" aria-label="Left Godzilla panel: default black with white Godzilla, hover to invert">
+        <div class="godzilla-frame">
+          <img 
+            src="Images/Godzilla-leftinvert.png" 
+            alt="Godzilla Left Invert (Light silhouette)" 
+            class="godzilla-img default-img"
+          >
+          <img 
+            src="Images/Godzilla-left.png" 
+            alt="Godzilla Left (Dark texture)" 
+            class="godzilla-img hover-img"
+          >
+        </div>
+        <div class="state-hint">Left: Inverted &bull; Hover to flip</div>
+      </div>
+
+      <!-- CENTER DIVIDING LINE -->
+      <div class="split-divider" aria-hidden="true"></div>
+
+      <!-- RIGHT SIDE: Default White Background + Godzilla-right.png, Hover: Black Background + Godzilla-rightinvert.png -->
+      <div class="split-side split-right" id="splitRight" tabindex="0" role="region" aria-label="Right Godzilla panel: default white with dark Godzilla, hover to invert">
+        <div class="godzilla-frame">
+          <img 
+            src="Images/Godzilla-right.png" 
+            alt="Godzilla Right (Dark texture)" 
+            class="godzilla-img default-img"
+          >
+          <img 
+            src="Images/Godzilla-rightinvert.png" 
+            alt="Godzilla Right Invert (Light silhouette)" 
+            class="godzilla-img hover-img"
+          >
+        </div>
+        <div class="state-hint">Right: Standard &bull; Hover to flip</div>
+      </div>
+
+    </div>
+
+    <!-- SCROLL DOWN PROMPT -->
+    <a href="#about" class="scroll-prompt" aria-label="Scroll down to explore what contrast is in art">
+      <span class="scroll-text">Scroll to explore contrast in art</span>
+      <span class="scroll-arrow" aria-hidden="true">&darr;</span>
+    </a>
+
+  </section>
+
+
+  <!-- MAIN CONTENT: WHAT IS CONTRAST IN ART -->
+  <main class="content-main">
+
+    <!-- ABOUT CONTRAST SECTION -->
+    <section class="content-section" id="about">
+      <div class="container">
+        <div class="section-badge">Art Fundamentals</div>
+        <h2 class="section-heading" id="aboutHeading">What is Contrast in Art?</h2>
+        <p class="section-lead" id="aboutLead">
+          Contrast is the juxtaposition of opposing visual elements. When artists place radically different qualities next to one another, each side gains emphasis, creating vibrancy, depth, and visual intrigue.
+        </p>
+
+        <!-- Quote Block -->
+        <blockquote class="contrast-quote" id="aboutQuote">
+          &ldquo;Without contrast, an image loses depth and vibrancy. Contrast creates the tension that commands human attention.&rdquo;
+        </blockquote>
+
+        <!-- Why Contrast Matters Grid -->
+        <div class="grid-three" id="whyMattersGrid">
+          <article class="matter-card">
+            <h3 class="matter-title">Directs the Viewer's Eye</h3>
+            <p class="matter-desc">The human brain is naturally wired to notice differences. High-contrast areas immediately become focal points.</p>
+          </article>
+          <article class="matter-card">
+            <h3 class="matter-title">Creates Emotional Atmosphere</h3>
+            <p class="matter-desc">Extreme tonal contrast (like stark black and white) evokes mystery, terror, or heroism, while soft contrast feels peaceful and harmonious.</p>
+          </article>
+          <article class="matter-card">
+            <h3 class="matter-title">Establishes Depth and Form</h3>
+            <p class="matter-desc">By placing bright highlights against deep shadows, artists give three-dimensional volume to two-dimensional surfaces.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPES OF CONTRAST SECTION -->
+    <section class="content-section section-alternate" id="types">
+      <div class="container">
+        <div class="section-badge">Visual Principles</div>
+        <h2 class="section-heading">Four Core Types of Contrast</h2>
+        <p class="section-subtext">
+          Artists and cinematographers utilize multiple dimensions of contrast to tell compelling stories.
+        </p>
+
+        <!-- Four Core Types of Contrast Grid -->
+        <div class="contrast-types-grid" id="contrastTypesGrid">
+          <article class="type-card">
+            <div>
+              <div class="type-header">
+                <h3 class="type-title">1. Value &amp; Tonal Contrast</h3>
+                <span class="type-badge">Seen in Hero</span>
+              </div>
+              <div class="type-subtitle">Light vs. Shadow (Chiaroscuro)</div>
+              <p class="type-detail">Value contrast is precisely what the Godzilla hero demonstrates. On the left, an inverted white silhouette cuts against a void of pure black. On the right, deep textured scales stand boldly against white. Extreme value contrast creates high-impact silhouettes and dramatic visual weight.</p>
+            </div>
+            <div class="type-example">
+              <strong>Art Example:</strong> Caravaggio and Rembrandt popularized chiaroscuro in oil painting, while Japanese ink wash painting (Sumi-e) relied on the stark contrast of black ink on empty white paper.
+            </div>
+          </article>
+
+          <article class="type-card">
+            <div>
+              <div class="type-header">
+                <h3 class="type-title">2. Scale &amp; Proportion Contrast</h3>
+                <span class="type-badge">Cinematic</span>
+              </div>
+              <div class="type-subtitle">Monumental vs. Miniature</div>
+              <p class="type-detail">Godzilla is effective as an artistic icon because of scale contrast. By standing hundreds of feet above ordinary buildings, power lines, and fleeing crowds, the visual disparity emphasizes immense power, vulnerability, and impossible scale.</p>
+            </div>
+            <div class="type-example">
+              <strong>Art Example:</strong> Romanticist painters like Caspar David Friedrich placed lone, tiny wanderers before gigantic misty mountains to evoke the sublime.
+            </div>
+          </article>
+
+          <article class="type-card">
+            <div>
+              <div class="type-header">
+                <h3 class="type-title">3. Texture &amp; Surface Contrast</h3>
+                <span class="type-badge">Detail</span>
+              </div>
+              <div class="type-subtitle">Rough vs. Smooth</div>
+              <p class="type-detail">Godzilla's rugged, scarred hide and razor-sharp dorsal fins stand out vividly against smooth backgrounds or flat architectural surfaces. Texture contrast ensures that fine details do not get lost in visual noise.</p>
+            </div>
+            <div class="type-example">
+              <strong>Art Example:</strong> Sculptors juxtapose polished marble with rough chiseled rock, and printmakers juxtapose crosshatched lines with smooth paper.
+            </div>
+          </article>
+
+          <article class="type-card">
+            <div>
+              <div class="type-header">
+                <h3 class="type-title">4. Color &amp; Temperature Contrast</h3>
+                <span class="type-badge">Vibrancy</span>
+              </div>
+              <div class="type-subtitle">Warm vs. Cool / Complementary</div>
+              <p class="type-detail">Even in monochromatic art, subtle shifts between cool and warm tones make elements jump forward or recede. In modern Godzilla cinema, his cold bioluminescent atomic blue spine clashes against warm burning city fires, creating instantaneous contrast.</p>
+            </div>
+            <div class="type-example">
+              <strong>Art Example:</strong> Post-impressionist painters like Vincent van Gogh paired cobalt blues with fiery yellows to make canvases vibrate with energy.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE CONTRAST LAB -->
+    <section class="content-section" id="interactive">
+      <div class="container">
+        <div class="section-badge">Student Prototype Lab</div>
+        <h2 class="section-heading">Interactive Contrast Inspector</h2>
+        <p class="section-subtext">
+          Click the principles below to examine how different contrast mechanics operate.
+        </p>
+
+        <div class="interactive-lab-container">
+          <!-- Hidden Radio Inputs for Pure CSS Tab Switching -->
+          <input type="radio" name="lab-tab" id="tab-radio-value" class="lab-radio" checked>
+          <input type="radio" name="lab-tab" id="tab-radio-scale" class="lab-radio">
+          <input type="radio" name="lab-tab" id="tab-radio-texture" class="lab-radio">
+          <input type="radio" name="lab-tab" id="tab-radio-color" class="lab-radio">
+
+          <!-- Tab Buttons (Labels connected to radios) -->
+          <div class="lab-tabs" role="tablist">
+            <label for="tab-radio-value" class="lab-tab-btn" role="tab">Value &amp; Tonal</label>
+            <label for="tab-radio-scale" class="lab-tab-btn" role="tab">Scale &amp; Proportion</label>
+            <label for="tab-radio-texture" class="lab-tab-btn" role="tab">Texture &amp; Surface</label>
+            <label for="tab-radio-color" class="lab-tab-btn" role="tab">Color &amp; Temperature</label>
+          </div>
+
+          <!-- Active Detail Display Cards (Shown via CSS :checked) -->
+          <div class="lab-display-card" id="tab-panel-value" role="tabpanel">
+            <h3 class="lab-title">1. Value &amp; Tonal Contrast</h3>
+            <div class="lab-meta">Light vs. Shadow (Chiaroscuro) &mdash; [Seen in Hero]</div>
+            <p class="lab-body">Value contrast is precisely what the Godzilla hero demonstrates. On the left, an inverted white silhouette cuts against a void of pure black. On the right, deep textured scales stand boldly against white. Extreme value contrast creates high-impact silhouettes and dramatic visual weight.</p>
+            <div class="lab-example">
+              <strong>Practical Art Insight:</strong> Caravaggio and Rembrandt popularized chiaroscuro in oil painting, while Japanese ink wash painting (Sumi-e) relied on the stark contrast of black ink on empty white paper.
+            </div>
+          </div>
+
+          <div class="lab-display-card" id="tab-panel-scale" role="tabpanel">
+            <h3 class="lab-title">2. Scale &amp; Proportion Contrast</h3>
+            <div class="lab-meta">Monumental vs. Miniature &mdash; [Cinematic]</div>
+            <p class="lab-body">Godzilla is effective as an artistic icon because of scale contrast. By standing hundreds of feet above ordinary buildings, power lines, and fleeing crowds, the visual disparity emphasizes immense power, vulnerability, and impossible scale.</p>
+            <div class="lab-example">
+              <strong>Practical Art Insight:</strong> Romanticist painters like Caspar David Friedrich placed lone, tiny wanderers before gigantic misty mountains to evoke the sublime.
+            </div>
+          </div>
+
+          <div class="lab-display-card" id="tab-panel-texture" role="tabpanel">
+            <h3 class="lab-title">3. Texture &amp; Surface Contrast</h3>
+            <div class="lab-meta">Rough vs. Smooth &mdash; [Detail]</div>
+            <p class="lab-body">Godzilla's rugged, scarred hide and razor-sharp dorsal fins stand out vividly against smooth backgrounds or flat architectural surfaces. Texture contrast ensures that fine details do not get lost in visual noise.</p>
+            <div class="lab-example">
+              <strong>Practical Art Insight:</strong> Sculptors juxtapose polished marble with rough chiseled rock, and printmakers juxtapose crosshatched lines with smooth paper.
+            </div>
+          </div>
+
+          <div class="lab-display-card" id="tab-panel-color" role="tabpanel">
+            <h3 class="lab-title">4. Color &amp; Temperature Contrast</h3>
+            <div class="lab-meta">Warm vs. Cool / Complementary &mdash; [Vibrancy]</div>
+            <p class="lab-body">Even in monochromatic art, subtle shifts between cool and warm tones make elements jump forward or recede. In modern Godzilla cinema, his cold bioluminescent atomic blue spine clashes against warm burning city fires, creating instantaneous contrast.</p>
+            <div class="lab-example">
+              <strong>Practical Art Insight:</strong> Post-impressionist painters like Vincent van Gogh paired cobalt blues with fiery yellows to make canvases vibrate with energy.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRACTICAL TIPS & PRINCIPLES -->
+    <section class="content-section" id="principles">
+      <div class="container">
+        <div class="section-badge">Design Insights</div>
+        <h2 class="section-heading">Key Insights for Artists</h2>
+        <div class="tips-grid" id="tipsGrid">
+          <div class="tip-card">
+            <h3 class="tip-title">Tip #1: Use High Contrast Sparingly</h3>
+            <p class="tip-text">If every single part of an artwork is high-contrast, the viewer's eyes get exhausted. Reserve the greatest contrast for your main focal point.</p>
+          </div>
+          <div class="tip-card">
+            <h3 class="tip-title">Tip #2: Remember Negative Space</h3>
+            <p class="tip-text">Empty space (the black or white background) is just as active as the subject. It defines the silhouette and allows the eye to rest.</p>
+          </div>
+          <div class="tip-card">
+            <h3 class="tip-title">Tip #3: Inversion Changes Emotion</h3>
+            <p class="tip-text">Notice how the black background makes Godzilla feel like a nocturnal creature emerging from the dark, while the white background feels like a graphic architectural print.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MINIMAL FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p class="footer-note">&copy; Godzilla Contrast Prototype &bull; Pure HTML &amp; CSS Mid-Fidelity Study</p>
+      <a href="#hero" class="back-to-top">&uarr; Back to Hero</a>
+    </div>
+  </footer>
+
+</body>
+</html>

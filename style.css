@@ -1,0 +1,705 @@
+/* ==========================================================================
+   GODZILLA CONTRAST - MID-FIDELITY PROTOTYPE STYLESHEET
+   Clean HTML, CSS & JS - Minimal Monochrome Palette
+   ========================================================================== */
+
+/* 1. Global Reset & Base Variables */
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-dark: #1a1a1a;
+  --color-gray-medium: #666666;
+  --color-gray-light: #eeeeee;
+  --color-gray-border: #d0d0d0;
+  
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --transition-speed: 0.35s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-family);
+  background-color: var(--color-white);
+  color: var(--color-gray-dark);
+  line-height: 1.6;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* 2. Hero Section Layout */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3. Hero Header & Centered Menu */
+.hero-header {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* Allows hovering through header background */
+  padding: 0 16px;
+}
+
+.hero-menu {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 92%;
+  max-width: 1050px;
+  background: rgba(18, 18, 18, 0.88);
+  color: var(--color-white);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  padding: 10px 28px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-item {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-item:hover,
+.nav-item:focus {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+/* Centered Title in the middle of the menu */
+.hero-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-white);
+  text-align: center;
+  margin: 0 16px;
+  white-space: nowrap;
+}
+
+/* 4. Split Screen Godzilla Container */
+.split-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Individual Split Panel (50% each) */
+.split-side {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  padding: 60px 20px 40px;
+  transition: background-color var(--transition-speed) ease;
+  user-select: none;
+}
+
+/* LEFT SIDE: Default Black, Hover White */
+.split-left {
+  background-color: var(--color-black);
+}
+
+.split-left:hover,
+.split-left:focus-visible,
+.split-left:active,
+.split-left.is-hovered {
+  background-color: var(--color-white);
+}
+
+/* RIGHT SIDE: Default White, Hover Black */
+.split-right {
+  background-color: var(--color-white);
+}
+
+.split-right:hover,
+.split-right:focus-visible,
+.split-right:active,
+.split-right.is-hovered {
+  background-color: var(--color-black);
+}
+
+/* Center Dividing Line */
+.split-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: rgba(128, 128, 128, 0.45);
+  transform: translateX(-50%);
+  z-index: 20;
+  pointer-events: none;
+}
+
+/* 5. Godzilla Image Frame & Crossfade */
+.godzilla-frame {
+  position: relative;
+  width: 85%;
+  max-width: 480px;
+  aspect-ratio: 792 / 768;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.split-side:hover .godzilla-frame,
+.split-side:focus-visible .godzilla-frame {
+  transform: scale(1.02);
+}
+
+.godzilla-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity var(--transition-speed) ease;
+  pointer-events: none;
+}
+
+/* Left Side Image State Logic:
+   Default: Godzilla-leftinvert.png visible, Godzilla-left.png hidden
+   Hover: Godzilla-leftinvert.png hidden, Godzilla-left.png visible */
+.split-left .default-img {
+  opacity: 1;
+}
+.split-left .hover-img {
+  opacity: 0;
+}
+.split-left:hover .default-img,
+.split-left:focus-visible .default-img,
+.split-left:active .default-img,
+.split-left.is-hovered .default-img {
+  opacity: 0;
+}
+.split-left:hover .hover-img,
+.split-left:focus-visible .hover-img,
+.split-left:active .hover-img,
+.split-left.is-hovered .hover-img {
+  opacity: 1;
+}
+
+/* Right Side Image State Logic:
+   Default: Godzilla-right.png visible, Godzilla-rightinvert.png hidden
+   Hover: Godzilla-right.png hidden, Godzilla-rightinvert.png visible */
+.split-right .default-img {
+  opacity: 1;
+}
+.split-right .hover-img {
+  opacity: 0;
+}
+.split-right:hover .default-img,
+.split-right:focus-visible .default-img,
+.split-right:active .default-img,
+.split-right.is-hovered .default-img {
+  opacity: 0;
+}
+.split-right:hover .hover-img,
+.split-right:focus-visible .hover-img,
+.split-right:active .hover-img,
+.split-right.is-hovered .hover-img {
+  opacity: 1;
+}
+
+/* Subtle Interactive State Hint */
+.state-hint {
+  margin-top: 18px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  border: 1px solid currentColor;
+  transition: color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+/* Text color contrast adaptations */
+.split-left .state-hint {
+  color: rgba(255, 255, 255, 0.65);
+}
+.split-left:hover .state-hint,
+.split-left:focus-visible .state-hint,
+.split-left:active .state-hint,
+.split-left.is-hovered .state-hint {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.split-right .state-hint {
+  color: rgba(0, 0, 0, 0.65);
+}
+.split-right:hover .state-hint,
+.split-right:focus-visible .state-hint,
+.split-right:active .state-hint,
+.split-right.is-hovered .state-hint {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* 6. Scroll Down Prompt */
+.scroll-prompt {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  background: rgba(18, 18, 18, 0.82);
+  color: var(--color-white);
+  padding: 8px 18px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.scroll-prompt:hover {
+  transform: translateX(-50%) translateY(3px);
+  background: var(--color-black);
+}
+
+.scroll-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.scroll-arrow {
+  font-size: 1rem;
+  line-height: 1;
+  animation: bounce 1.8s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* 7. Content Main & Sections */
+.content-main {
+  background-color: var(--color-white);
+}
+
+.content-section {
+  padding: 80px 24px;
+  border-bottom: 1px solid var(--color-gray-border);
+}
+
+.section-alternate {
+  background-color: #fafafa;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.section-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-gray-medium);
+  border: 1px solid var(--color-gray-border);
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.section-lead {
+  font-size: 1.15rem;
+  color: #333333;
+  margin-bottom: 28px;
+  max-width: 820px;
+  line-height: 1.7;
+}
+
+.section-subtext {
+  font-size: 1.05rem;
+  color: var(--color-gray-medium);
+  margin-bottom: 36px;
+}
+
+/* Quote Box */
+.contrast-quote {
+  border-left: 4px solid var(--color-black);
+  padding: 16px 24px;
+  margin: 28px 0 44px;
+  background-color: #f5f5f5;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--color-black);
+  line-height: 1.6;
+}
+
+/* 3-Column Grid for 'Why Contrast Matters' */
+.grid-three {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.matter-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-border);
+  padding: 24px;
+  border-radius: 6px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.matter-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.matter-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--color-black);
+}
+
+.matter-desc {
+  font-size: 0.95rem;
+  color: #444444;
+  line-height: 1.5;
+}
+
+/* 8. Types of Contrast Grid */
+.contrast-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.type-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-border);
+  border-radius: 8px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.type-card:hover {
+  border-color: var(--color-black);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.type-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.type-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.type-badge {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  padding: 3px 8px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-radius: 4px;
+}
+
+.type-subtitle {
+  font-size: 0.9rem;
+  color: var(--color-gray-medium);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.type-detail {
+  font-size: 0.95rem;
+  color: #333333;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.type-example {
+  background-color: #f7f7f7;
+  border-left: 3px solid var(--color-gray-medium);
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  color: #555555;
+  border-radius: 0 4px 4px 0;
+}
+
+/* 9. Interactive Lab Section */
+.interactive-lab-container {
+  position: relative;
+  border: 1px solid var(--color-gray-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-white);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.lab-tabs {
+  display: flex;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid var(--color-gray-border);
+  overflow-x: auto;
+}
+
+.lab-tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-gray-medium);
+  cursor: pointer;
+  white-space: nowrap;
+  border-right: 1px solid var(--color-gray-border);
+  transition: all 0.2s ease;
+  text-align: center;
+  user-select: none;
+}
+
+.lab-tab-btn:last-child {
+  border-right: none;
+}
+
+.lab-tab-btn:hover {
+  background-color: #e5e5e5;
+  color: var(--color-black);
+}
+
+/* Hidden Radio Inputs for Pure CSS Tab Switching */
+.lab-radio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Active tab style via pure CSS :checked selector */
+#tab-radio-value:checked ~ .lab-tabs label[for="tab-radio-value"],
+#tab-radio-scale:checked ~ .lab-tabs label[for="tab-radio-scale"],
+#tab-radio-texture:checked ~ .lab-tabs label[for="tab-radio-texture"],
+#tab-radio-color:checked ~ .lab-tabs label[for="tab-radio-color"] {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-bottom: 2px solid var(--color-black);
+}
+
+.lab-display-card {
+  display: none;
+  padding: 32px;
+}
+
+/* Display corresponding card via pure CSS :checked selector */
+#tab-radio-value:checked ~ #tab-panel-value,
+#tab-radio-scale:checked ~ #tab-panel-scale,
+#tab-radio-texture:checked ~ #tab-panel-texture,
+#tab-radio-color:checked ~ #tab-panel-color {
+  display: block;
+}
+
+.lab-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.lab-meta {
+  font-size: 0.95rem;
+  color: var(--color-gray-medium);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.lab-body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #2b2b2b;
+  margin-bottom: 20px;
+}
+
+.lab-example {
+  background-color: #f7f7f7;
+  padding: 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #444444;
+  border-left: 4px solid var(--color-black);
+}
+
+/* 10. Tips Section */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.tip-card {
+  border: 1px dashed var(--color-gray-border);
+  padding: 22px;
+  border-radius: 6px;
+  background: #fdfdfd;
+}
+
+.tip-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-black);
+}
+
+.tip-text {
+  font-size: 0.92rem;
+  color: #444444;
+  line-height: 1.55;
+}
+
+/* 11. Minimal Footer */
+.site-footer {
+  background-color: var(--color-black);
+  color: #aaaaaa;
+  padding: 32px 24px;
+  font-size: 0.85rem;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.back-to-top {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 14px;
+  border: 1px solid #444;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.back-to-top:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+/* 12. Responsive Design */
+@media (max-width: 860px) {
+  .hero-menu {
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 20px;
+    border-radius: 16px;
+  }
+  
+  .hero-title {
+    order: -1;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .split-container {
+    flex-direction: column;
+  }
+
+  .split-divider {
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: 100%;
+    height: 2px;
+    transform: translateY(-50%);
+  }
+
+  .hero-section {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .split-side {
+    height: 50vh;
+    min-height: 340px;
+    padding: 40px 16px;
+  }
+
+  .godzilla-frame {
+    max-width: 280px;
+  }
+}
