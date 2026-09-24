@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Godzilla is Contrast | Art & Design Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HERO SECTION WITH SPLIT CONTRAST -->
+  <section class="hero-section" id="hero">
+
+    <!-- HERO MENU WITH CENTERED TITLE -->
+    <header class="hero-header">
+      <nav class="hero-menu" aria-label="Main Navigation">
+        <ul class="nav-links nav-left">
+          <li><a href="#about" class="nav-item">What is Contrast?</a></li>
+          <li><a href="#types" class="nav-item">Types of Contrast</a></li>
+        </ul>
+
+        <!-- Center Title specified in prompt: "Godzilla is contrast" -->
+        <h1 class="hero-title" id="heroTitle">Godzilla is contrast</h1>
+
+        <ul class="nav-links nav-right">
+          <li><a href="#principles" class="nav-item">Key Principles</a></li>
+          <li><a href="#interactive" class="nav-item">Interactive Lab</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- SPLIT CONTAINER -->
+    <div class="split-container">
+      
+      <!-- LEFT SIDE: Default Black Background + Godzilla-leftinvert.png, Hover: White Background + Godzilla-left.png -->
+      <div class="split-side split-left" id="splitLeft" tabindex="0" role="region" aria-label="Left Godzilla panel: default black with white Godzilla, hover to invert">
+        <div class="godzilla-frame">
+          <img 
+            src="Images/Godzilla-leftinvert.png" 
+            alt="Godzilla Left Invert (Light silhouette)" 
+            class="godzilla-img default-img"
+          >
+          <img 
+            src="Images/Godzilla-left.png" 
+            alt="Godzilla Left (Dark texture)" 
+            class="godzilla-img hover-img"
+          >
+        </div>
+        <div class="state-hint">Left: Inverted &bull; Hover to flip</div>
+      </div>
+
+      <!-- CENTER DIVIDING LINE -->
+      <div class="split-divider" aria-hidden="true"></div>
+
+      <!-- RIGHT SIDE: Default White Background + Godzilla-right.png, Hover: Black Background + Godzilla-rightinvert.png -->
+      <div class="split-side split-right" id="splitRight" tabindex="0" role="region" aria-label="Right Godzilla panel: default white with dark Godzilla, hover to invert">
+        <div class="godzilla-frame">
+          <img 
+            src="Images/Godzilla-right.png" 
+            alt="Godzilla Right (Dark texture)" 
+            class="godzilla-img default-img"
+          >
+          <img 
+            src="Images/Godzilla-rightinvert.png" 
+            alt="Godzilla Right Invert (Light silhouette)" 
+            class="godzilla-img hover-img"
+          >
+        </div>
+        <div class="state-hint">Right: Standard &bull; Hover to flip</div>
+      </div>
+
+    </div>
+
+    <!-- SCROLL DOWN PROMPT -->
+    <a href="#about" class="scroll-prompt" aria-label="Scroll down to explore what contrast is in art">
+      <span class="scroll-text">Scroll to explore contrast in art</span>
+      <span class="scroll-arrow" aria-hidden="true">&darr;</span>
+    </a>
+
+  </section>
+
+
+  <!-- MAIN CONTENT: WHAT IS CONTRAST IN ART -->
+  <main class="content-main">
+
+    <!-- ABOUT CONTRAST SECTION -->
+    <section class="content-section" id="about">
+      <div class="container">
+        <div class="section-badge">Art Fundamentals</div>
+        <h2 class="section-heading" id="aboutHeading">What is Contrast in Art?</h2>
+        <p class="section-lead" id="aboutLead">
+          Contrast is the juxtaposition of opposing visual elements. When artists place radically different qualities next to one another, each side gains emphasis, creating vibrancy, depth, and visual intrigue.
+        </p>
+
+        <!-- Quote Block -->
+        <blockquote class="contrast-quote" id="aboutQuote">
+          &ldquo;Without contrast, an image loses depth and vibrancy. Contrast creates the tension that commands human attention.&rdquo;
+        </blockquote>
+
+        <!-- Why Contrast Matters Grid (Populated dynamically from local JSON) -->
+        <div class="grid-three" id="whyMattersGrid">
+          <!-- Populated by script.js from content.json -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPES OF CONTRAST SECTION -->
+    <section class="content-section section-alternate" id="types">
+      <div class="container">
+        <div class="section-badge">Visual Principles</div>
+        <h2 class="section-heading">Four Core Types of Contrast</h2>
+        <p class="section-subtext">
+          Artists and cinematographers utilize multiple dimensions of contrast to tell compelling stories.
+        </p>
+
+        <!-- Dynamic Grid of Contrast Types -->
+        <div class="contrast-types-grid" id="contrastTypesGrid">
+          <!-- Populated by script.js from content.json -->
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE CONTRAST LAB (USING LOCAL JSON DATA) -->
+    <section class="content-section" id="interactive">
+      <div class="container">
+        <div class="section-badge">Student Prototype Lab</div>
+        <h2 class="section-heading">Interactive Contrast Inspector</h2>
+        <p class="section-subtext">
+          Click the principles below to examine how different contrast mechanics operate.
+        </p>
+
+        <div class="interactive-lab-container">
+          <!-- Tab Buttons (populated from JSON) -->
+          <div class="lab-tabs" id="labTabs" role="tablist">
+            <!-- Populated by script.js -->
+          </div>
+
+          <!-- Active Detail Display Card -->
+          <div class="lab-display-card" id="labDisplayCard" role="tabpanel">
+            <h3 class="lab-title" id="labDetailTitle">Value & Tonal Contrast</h3>
+            <div class="lab-meta" id="labDetailMeta">Light vs. Shadow (Chiaroscuro)</div>
+            <p class="lab-body" id="labDetailBody">Select a principle to inspect its artistic mechanics.</p>
+            <div class="lab-example" id="labDetailExample"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRACTICAL TIPS & PRINCIPLES -->
+    <section class="content-section" id="principles">
+      <div class="container">
+        <div class="section-badge">Design Insights</div>
+        <h2 class="section-heading">Key Insights for Artists</h2>
+        <div class="tips-grid" id="tipsGrid">
+          <!-- Populated by script.js from content.json -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MINIMAL FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p class="footer-note">&copy; Godzilla Contrast Prototype &bull; Simple HTML, CSS &amp; JS Mid-Fidelity Study</p>
+      <a href="#hero" class="back-to-top">&uarr; Back to Hero</a>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>

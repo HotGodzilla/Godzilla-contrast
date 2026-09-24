@@ -1,0 +1,81 @@
+{
+  "title": "Godzilla is contrast",
+  "navigation": [
+    { "label": "The Hero Split", "target": "#hero" },
+    { "label": "What is Contrast?", "target": "#about" },
+    { "label": "Types of Contrast", "target": "#types" },
+    { "label": "Art Principles", "target": "#principles" }
+  ],
+  "aboutContrast": {
+    "heading": "Understanding Contrast in Art",
+    "subtitle": "The fundamental principle of visual opposition",
+    "definition": "Contrast in visual art refers to the arrangement of opposite elements and effects—such as light and dark values, rough and smooth textures, or large and small shapes. It is one of the core principles of design used to create visual rhythm, drama, and focal hierarchy.",
+    "quote": "Without contrast, an image loses depth and vibrancy. Contrast creates the tension that commands human attention.",
+    "whyItMatters": [
+      {
+        "title": "Directs the Viewer's Eye",
+        "description": "The human brain is naturally wired to notice differences. High-contrast areas immediately become focal points."
+      },
+      {
+        "title": "Creates Emotional Atmosphere",
+        "description": "Extreme tonal contrast (like stark black and white) evokes mystery, terror, or heroism, while soft contrast feels peaceful and harmonious."
+      },
+      {
+        "title": "Establishes Depth and Form",
+        "description": "By placing bright highlights against deep shadows, artists give three-dimensional volume to two-dimensional surfaces."
+      }
+    ]
+  },
+  "contrastTypes": [
+    {
+      "id": "value",
+      "title": "1. Value & Tonal Contrast",
+      "subtitle": "Light vs. Shadow (Chiaroscuro)",
+      "badge": "Seen in Hero",
+      "summary": "The relationship between the lightest whites and the darkest darks.",
+      "detail": "Value contrast is precisely what the Godzilla hero demonstrates. On the left, an inverted white silhouette cuts against a void of pure black. On the right, deep textured scales stand boldly against white. Extreme value contrast creates high-impact silhouettes and dramatic visual weight.",
+      "artExample": "Caravaggio and Rembrandt popularized chiaroscuro in oil painting, while Japanese ink wash painting (Sumi-e) relied on the stark contrast of black ink on empty white paper."
+    },
+    {
+      "id": "scale",
+      "title": "2. Scale & Proportion Contrast",
+      "subtitle": "Monumental vs. Miniature",
+      "badge": "Cinematic",
+      "summary": "Placing objects of radically different sizes together to convey scale.",
+      "detail": "Godzilla is effective as an artistic icon because of scale contrast. By standing hundreds of feet above ordinary buildings, power lines, and fleeing crowds, the visual disparity emphasizes immense power, vulnerability, and impossible scale.",
+      "artExample": "Romanticist painters like Caspar David Friedrich placed lone, tiny wanderers before gigantic misty mountains to evoke the sublime."
+    },
+    {
+      "id": "texture",
+      "title": "3. Texture & Surface Contrast",
+      "subtitle": "Rough vs. Smooth",
+      "badge": "Detail",
+      "summary": "Combining jagged, intricate surfaces with clean, flat negative space.",
+      "detail": "Godzilla's rugged, scarred hide and razor-sharp dorsal fins stand out vividly against smooth backgrounds or flat architectural surfaces. Texture contrast ensures that fine details do not get lost in visual noise.",
+      "artExample": "Sculptors juxtapose polished marble with rough chiseled rock, and printmakers juxtapose crosshatched lines with smooth paper."
+    },
+    {
+      "id": "color",
+      "title": "4. Color & Temperature Contrast",
+      "subtitle": "Warm vs. Cool / Complementary",
+      "badge": "Vibrancy",
+      "summary": "Using opposing hues on the color wheel to generate visual energy.",
+      "detail": "Even in monochromatic art, subtle shifts between cool and warm tones make elements jump forward or recede. In modern Godzilla cinema, his cold bioluminescent atomic blue spine clashes against warm burning city fires, creating instantaneous contrast.",
+      "artExample": "Post-impressionist painters like Vincent van Gogh paired cobalt blues with fiery yellows to make canvases vibrate with energy."
+    }
+  ],
+  "interactiveTips": [
+    {
+      "tip": "Tip #1: Use High Contrast Sparingly",
+      "explanation": "If every single part of an artwork is high-contrast, the viewer's eyes get exhausted. Reserve the greatest contrast for your main focal point."
+    },
+    {
+      "tip": "Tip #2: Remember Negative Space",
+      "explanation": "Empty space (the black or white background) is just as active as the subject. It defines the silhouette and allows the eye to rest."
+    },
+    {
+      "tip": "Tip #3: Inversion Changes Emotion",
+      "explanation": "Notice how the black background makes Godzilla feel like a nocturnal creature emerging from the dark, while the white background feels like a graphic architectural print."
+    }
+  ]
+}
